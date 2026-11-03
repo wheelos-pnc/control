@@ -1,0 +1,4 @@
+common:dev --lockfile_mode=off
+common:dev --override_module=wheelos_common=../common
+common:dev --override_module=wheelos_core=../core
+common:dev --override_module=wheelos_msgs=../wheelos_msgs

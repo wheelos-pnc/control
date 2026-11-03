@@ -1,0 +1,5 @@
+filegroup(
+    name = "runtime_data",
+    srcs = ["//modules/control:runtime_data"],
+    visibility = ["//visibility:public"],
+)

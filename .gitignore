@@ -66,3 +66,8 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+bazel-*
+MODULE.bazel.lock
+__pycache__/
+*.pyc
