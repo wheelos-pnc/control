@@ -1,4 +1,5 @@
 load("@core//runtime:install.bzl", "pkg_install")
+load("@core//runtime:runtime.bzl", "runtime_module")
 load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library", "cc_test")
 load("@rules_pkg//pkg:mappings.bzl", "pkg_attributes", "pkg_filegroup", "pkg_files", "strip_prefix")
 
@@ -219,4 +220,17 @@ filegroup(
     srcs = glob([
         "testdata/**",
     ]),
+)
+
+runtime_module(
+    name = "module",
+    components = [":libcontrol_component.so"],
+    files = {
+        "conf/control_common_conf.pb.txt": "conf/control/control_common_conf.pb.txt",
+        "conf/control_conf.pb.txt": "conf/control/control_conf.pb.txt",
+        "runtime/control.conf": "conf/control/control.conf",
+        "runtime/control.dag": "dag/control/control.dag",
+        "runtime/control.launch": "launch/control/control.launch",
+    },
+    module_name = "control",
 )
